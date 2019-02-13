@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+
+<!-- <input type="text" id="text" name="Search" placeholder="Search Value">
+<input type="submit" name="submit" onclick="search()"> -->
+
+<script type="text/javascript">
+var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+function linearSearch(array, toFind){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === toFind) return i;
+  }
+  return -1;
+}
+
+var ind=linearSearch(colors, "green");
+alert(colors[ind])
+</script>
+</body>
+</html>

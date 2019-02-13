@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Linear Search</title>
+</head>
+<body>
+
+<input type="text" id="text" name="insert" placeholder="Insert a value in">
+<button id="insertvalq" onclick="InsertQ()">Insert Value In Queue</button> 
+<button id="insertvals" onclick="InsertS()">Insert Value In Stack</button> 
+<h1>This is Queue</h1>
+<ul id="list1"></ul>
+<button id="deletevalq" onclick="DeleteQ()">Delete Value From Queue</button> 
+<h1>This is stack</h1>
+<ul id="list2"></ul>
+<button id="deletevals" onclick="DeleteS()">Delete Value From Stack</button> 
+
+<script type="text/javascript">
+queue=[];
+stack=[];
+
+function InsertQ() {
+	// body...
+var insertval=document.getElementById("text").value;
+if(insertval !== ''){
+queue.push(insertval);
+document.getElementById("text").value="";  
+}
+printQ()
+}
+
+function InsertS() {
+	// body...
+var insertval=document.getElementById("text").value;
+if(insertval !== ''){
+stack.push(insertval);
+document.getElementById("text").value="";  
+}
+printS()
+}
+
+function DeleteQ(){
+   queue.shift();
+	printQ()
+}
+
+function DeleteS(){
+   stack.pop();
+	printS()
+}
+
+function printQ(){
+  document.getElementById('list1').innerHTML = '';    
+    for(let i in queue) {
+   document.getElementById("list1").innerHTML +="<li>"+queue[i]+"</li>"
+}
+}
+
+function printS(){
+  document.getElementById('list2').innerHTML = '';    
+    for(let i in stack) {
+   document.getElementById("list2").innerHTML +="<li>"+stack[i]+"</li>"
+}
+}
+</script>
+</body>
+</html>
